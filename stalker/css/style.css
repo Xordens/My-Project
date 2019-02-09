@@ -1,0 +1,49 @@
+body {
+	background: url('../img/front.jpg');
+	background-size: cover;
+	background-repeat: no-repeat; /* это что б не повторялась картинка*/
+	background-position: center;
+	min-height: 100vh; /*это что б высота минимум на весь экран*/
+	margin: 0 20px; /* увеличил отступ по бокам экрана(вообще их обнуляют и ставят свои)*/
+}
+.wrap { /*wrap - обвертка, чтоб стили работали на дочернии элементы*/
+	display: flex;
+	justify-content: space-between; /*развел по сторонам*/
+	align-items: flex-start; /*чтоб не растягивались на всю высоту родителя wrap*/
+}
+
+h1 {
+	font-family: Arial, serif;
+	font-style: oblique;
+	font-size: 40px;
+	color: #ffd700b8;
+	margin-bottom: 150px; /*увеличил пустое пространства под заголовком h1*/
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; /* <= крутая штука!!!*/
+}
+
+.block-a, 
+.block-b {
+	background: #176e7f75;
+	border: 20px solid #002a32;
+	border-radius: 10px;
+	padding: 5px; 
+	max-width: 30%; /*зделал блоки на треть экрана*/
+}
+
+.block-b {
+	max-width: 50%; /*это перебиваю стиль - с трети ширины делаю на пол экрана. если перебиваеш значить должен быть ниже написан в файле*/
+}
+
+p {
+	color: #00ff08;
+}
+@media(max-width: 768px) { /*медия запрос для адоптивности*/
+	.wrap {
+		flex-direction: column; /*все дочернии элементы поставить в колонку (друг под друга)*/
+	}
+	.block-a, 
+	.block-b {
+		max-width: 100%; /*пербивается - стать на весь экран*/
+		margin-bottom: /*50px; отталкнутся от друг друга (отступ снизу)*/
+	}
+}
